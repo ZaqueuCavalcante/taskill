@@ -1,8 +1,10 @@
+using Taskill.Back.CreateTask;
+
 namespace Taskill.Back.Database;
 
 public class TaskillDbContext(DbContextOptions<TaskillDbContext> options, DatabaseSettings settings) : DbContext(options)
 {
-    // public DbSet<Aluno> Alunos { get; set; }
+    public DbSet<TaskillTask> Tasks { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
