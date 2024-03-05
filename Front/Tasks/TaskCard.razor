@@ -1,0 +1,38 @@
+<MudStack Row="true" AlignItems="AlignItems.Center" Spacing="0" Style="width: 95%;">
+    <MudTextField
+        T="string"
+        Margin="Margin.Dense"
+        Placeholder="Short task title..."
+        Variant="Variant.Outlined"
+        @bind-Value="@_text"
+        MaxLength="30"
+        Adornment="Adornment.Start"
+        AdornmentIcon="@_checkIcon"
+        OnAdornmentClick="OnCheckIconClick"
+        AdornmentColor="@_color"
+    />
+</MudStack>
+
+@code
+{
+    bool _checked = false;
+    string _text = "lalala lalala";
+    string _checkIcon = Icons.Material.Filled.CheckBoxOutlineBlank;
+    Color _color = Color.Default;
+
+    private void OnCheckIconClick()
+    {
+        @if (_checked)
+        {
+            _checked = false;
+            _checkIcon = Icons.Material.Filled.CheckBoxOutlineBlank;
+            _color = Color.Default;
+        }
+        else
+        {
+            _checked = true;
+            _checkIcon = Icons.Material.Filled.CheckBox;
+            _color = Color.Success;
+        }
+    }
+}

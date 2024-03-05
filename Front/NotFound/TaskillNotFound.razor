@@ -1,10 +1,10 @@
-﻿<PageTitle>Not found</PageTitle>
+﻿@inject NavigationManager Nav
 
-<MudStack AlignItems="AlignItems.Center" Class="mt-16">
-    <MudText Style="font-size: 100px">
-        <strong>404</strong>
-    </MudText>
-    <MudText Style="font-size: 80px">
-        <strong>NOT FOUND</strong>
-    </MudText>
-</MudStack>
+@code 
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        Nav.NavigateTo("/");
+    }
+}

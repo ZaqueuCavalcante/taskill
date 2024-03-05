@@ -2,26 +2,31 @@
 
 <PageTitle>Taskill</PageTitle>
 
-<MudTabs Centered="true" MinimumTabWidth="100%">
+<MudTabs Centered="true" MinimumTabWidth="100%" @bind-ActivePanelIndex="@_index">
     <MudTabPanel Icon="@Icons.Material.Filled.AccountTree" Text="Projects">
-        <MudStack AlignItems="AlignItems.Center">
+        <MudStack AlignItems="AlignItems.Center" Class="pt-4">
             <MudText>Projects</MudText>
             <MudText>Projects</MudText>
             <MudText>Projects</MudText>
             <MudText>Projects</MudText>
         </MudStack>
     </MudTabPanel>
-    <MudTabPanel Icon="@Icons.Material.Filled.CheckBox" Text="Tasks" Style="width: 140px">
-        <MudStack AlignItems="AlignItems.Center">
-            <MudText>Task 00</MudText>
-            <MudText>Task 01</MudText>
-            <MudText>Task 02</MudText>
-            <MudText>Task 03</MudText>
+    <MudTabPanel Icon="@Icons.Material.Filled.CheckBox" Text="Tasks" Style="width: 130px">
+        <MudStack AlignItems="AlignItems.Center" Class="pt-4" Spacing="2">
+            <TaskCard />
+            <TaskCard />
+            <TaskCard />
+            <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Style="position:fixed; bottom:50px;" />
         </MudStack>
     </MudTabPanel>
-    <MudTabPanel Icon="@Icons.Material.Filled.AccountBox" Text="Account">
-        <MudStack AlignItems="AlignItems.Center">
-            <MudText>Account</MudText>
+    <MudTabPanel Icon="@Icons.Material.Filled.AccountBox" Text="Setup">
+        <MudStack AlignItems="AlignItems.Center" Class="pt-4">
+            <MudText>Setup</MudText>
         </MudStack>
     </MudTabPanel>
 </MudTabs>
+
+@code
+{
+    private int _index = 1;
+}
