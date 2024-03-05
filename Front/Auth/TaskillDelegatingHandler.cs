@@ -8,9 +8,6 @@ public class TaskillDelegatingHandler : DelegatingHandler
     {
         request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
 
-        // var token = await _localStorage.GetItemAsync("AccessToken");
-        // request.Headers.Add("Authorization", $"Bearer {token}");
-
         return await base.SendAsync(request, cancellationToken);
     }
 }

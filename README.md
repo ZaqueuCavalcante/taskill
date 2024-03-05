@@ -4,4 +4,6 @@
 
 Very minimalist TODO App
 
+OLD: https://github.com/ZaqueuCavalcante/taskill-old
+
 ![Overview](/Docs/taskill_00.png "Overview")
