@@ -7,6 +7,8 @@ public class Startup
         services.AddSettingsConfigs();
         services.AddServicesConfigs();
 
+        services.AddAuthConfigs();
+
         services.AddControllers();
         services.AddHttpConfigs();
 
@@ -22,6 +24,9 @@ public class Startup
 
         app.UseCors();
         app.UseRouting();
+
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         app.UseSwaggerThings();
 
